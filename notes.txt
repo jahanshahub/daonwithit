@@ -1,10 +1,10 @@
 Staking dApp for proof of concept should be compatible with 
 
-https://etherscan.io/address/0x54616c0815c306fc22417b96282ca4aa6f47d357#writeContract
+https://etherscan.io/address/0x54616c0815c306fc22417b96282ca4aa6f47d357#writeContract (we do not have these abis yet)
 
 and then also with 
 
-https://etherscan.io/address/0xac3ca81dfac18f2f3b11399bc1d419ee318d7f3f
+https://etherscan.io/address/0xac3ca81dfac18f2f3b11399bc1d419ee318d7f3f (this is the matching ABI to what is in /smartcontract)
 
 
 goal is to be able to adapt the staking dApp to any NFT smart contract. 
