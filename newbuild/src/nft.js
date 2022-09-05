@@ -28,14 +28,14 @@ const providerOptions = {
 		}
 	},
 	walletlink: {
-      package: WalletLink, 
+      package: WalletLink,
       options: {
-		  appName: "Morali", 
+		  appName: "Morali",
 		  infuraId: "d94953e32ec24c75ab3aa0c12b58f156",
-		  rpc: "", 
-		  chainId: 5, 
-		  appLogoUrl: null, 
-		  darkMode: true 
+		  rpc: "",
+		  chainId: 5,
+		  appLogoUrl: null,
+		  darkMode: true
 		}
 	  },
 };
@@ -44,7 +44,7 @@ const web3Modal = new Web3Modal({
 	network: "goerli",
 	theme: "dark",
 	cacheProvider: true,
-	providerOptions 
+	providerOptions
   });
 
 export default function NFT() {
@@ -81,6 +81,7 @@ export default function NFT() {
     .then(id => {
       return id;
     })
+    // console.log("nft===>", stakednfts, account, vaultcontract)
     const nftstk = await Promise.all(stakednfts.map(async i => {
       let stkid = {
         tokenId: i,
@@ -91,8 +92,8 @@ export default function NFT() {
       getStk(nftstk)
       console.log(apicall);
       setLoadingState('loaded')
-    } 
-    if (loadingState === 'loaded' && !apicall.length) 
+    }
+    if (loadingState === 'loaded' && !apicall.length)
     return (
           <h1 className="text-3xl">Wallet Not Connected</h1>)
     return (
@@ -128,9 +129,9 @@ export default function NFT() {
                       }
                       return (
                         <div>
-                        
+
                         <div className="card stakedcard mt-3 mb-3" key={i} >
-                          
+
                           <div className="card-caption col-12 p-0">
                             <div className="card-body">
                               <h5 className="mb-0">Trolls WTF NFT #{nft.tokenId}</h5>
@@ -147,7 +148,6 @@ export default function NFT() {
                 </div>
               </div>
             </div>
-           
+
         )
     }
-    
