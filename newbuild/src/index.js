@@ -4,20 +4,12 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
-import { Routes, Route } from "react-router-dom";
-import Nft from './nft';
+// import { Router, Routes, Route } from "react-router-dom";
+// import Nft from './nft';
 
-<Routes>
-<Route path="/nft" element={<Nft />} />
-</Routes>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  
-  <React.StrictMode>
-    <App />
-    <Nft />
-  </React.StrictMode>
+root.render(<App />
 );
 
 // If you want to start measuring performance in your app, pass a function
