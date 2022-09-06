@@ -14,3 +14,8 @@ goal is to be able to adapt the staking dApp to any NFT smart contract.
 
 
 TOP STAR NEW NFT CA 0x0435c4169C37ba32721dB46F2C06B7D11991db3D
+
+
+Try loading the dapp with npm run start
+
+The connect wallet doesnt change state, must fix alignement error       
