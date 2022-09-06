@@ -333,7 +333,7 @@ render() {
         <div className='col'>
           <body className='nftstaker border-0'>
             <form  style={{ fontFamily: "SF Pro Display" }} >
-              <h2 style={{ borderRadius: '14px', fontWeight: "300", fontSize: "25px" }}>N2DR NFT Staking Vault </h2>
+              <h2 style={{ borderRadius: '14px', fontWeight: "300", fontSize: "25px" }}>trollsWTFR NFT Staking Vault </h2>
               <h6 style={{ fontWeight: "300" }}>First time staking?</h6>
               <Button className="btn" onClick={enable} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Authorize Your Wallet</Button>
               <div className="row px-3">
@@ -365,7 +365,7 @@ render() {
                   <div className="col">
                     <form className='stakingrewards' style={{ borderRadius: "25px", boxShadow: "1px 1px 15px #ffffff", fontFamily: "SF Pro Display" }}>
                       <h5 style={{ color: "#FFFFFF", fontWeight: '300' }}> Staking Rewards</h5>
-                      <Button onClick={rewardinfo} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Earned N2D Rewards</Button>
+                      <Button onClick={rewardinfo} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Earned trollsWTF Rewards</Button>
                       <div id='earned' style={{ color: "#39FF14", marginTop: "5px", fontSize: '25px', fontWeight: '500', textShadow: "1px 1px 2px #000000" }}><p style={{ fontSize: "20px" }}>Earned Tokens</p></div>
                       <div className='col-12 mt-2'>
                         <div style={{ color: 'white' }}>Claim Rewards</div>
@@ -376,7 +376,7 @@ render() {
                 </div>
                 <div className="row px-4 pt-2">
                   <div className="header">
-                    <div style={{ fontSize: '25px', borderRadius: '14px', color: "#ffffff", fontWeight: "300" }}>N2DR NFT Staking Pool Active Rewards</div>
+                    <div style={{ fontSize: '25px', borderRadius: '14px', color: "#ffffff", fontWeight: "300" }}>trollsWTFR NFT Staking Pool Active Rewards</div>
                     <table className='table px-3 table-bordered table-dark'>
                       <thead className='thead-light'>
                         <tr>
@@ -387,36 +387,36 @@ render() {
                       </thead>
                       <tbody>
                         <tr>
-                          <td>N2D Bronze Collection</td>
+                          <td>trollsWTF Bronze Collection</td>
                           <td className="amount" data-test-id="rewards-summary-ads">
-                            <span className="amount">0.50</span>&nbsp;<span className="currency">N2DR</span>
+                            <span className="amount">0.50</span>&nbsp;<span className="currency">trollsWTFR</span>
                           </td>
                           <td className="exchange">
                             <span className="amount">2</span>&nbsp;<span className="currency">NFTs/M</span>
                           </td>
                         </tr>
                         <tr>
-                          <td>N2D Silver Collection</td>
+                          <td>trollsWTF Silver Collection</td>
                           <td className="amount" data-test-id="rewards-summary-ac">
-                            <span className="amount">2.50</span>&nbsp;<span className="currency">N2DR</span>
+                            <span className="amount">2.50</span>&nbsp;<span className="currency">trollsWTFR</span>
                           </td>
                           <td className="exchange"><span className="amount">10</span>&nbsp;<span className="currency">NFTs/M</span>
                           </td>
                         </tr>
                         <tr className='stakegoldeffect'>
-                          <td>N2D Gold Collection</td>
-                          <td className="amount" data-test-id="rewards-summary-one-time"><span className="amount">1</span>&nbsp;<span className="currency">N2DR+</span>
+                          <td>trollsWTF Gold Collection</td>
+                          <td className="amount" data-test-id="rewards-summary-one-time"><span className="amount">1</span>&nbsp;<span className="currency">trollsWTFR+</span>
                           </td>
                           <td className="exchange">
                             <span className="amount">25 NFTs/M or </span>
-                            <span className="currency">100 N2DR/M</span>
+                            <span className="currency">100 trollsWTFR/M</span>
                           </td>
                         </tr>
                       </tbody>
                     </table>
 
                     <div className="header">
-                      <div style={{ fontSize: '25px', borderRadius: '14px', fontWeight: '300' }}>N2DR Token Stake Farms</div>
+                      <div style={{ fontSize: '25px', borderRadius: '14px', fontWeight: '300' }}>trollsWTFR Token Stake Farms</div>
                       <table className='table table-bordered table-dark' style={{ borderRadius: '14px' }} >
                         <thead className='thead-light'>
                           <tr>
@@ -426,15 +426,15 @@ render() {
                         </thead>
                         <tbody>
                           <tr>
-                            <td>Stake N2DR to Earn N2DR</td>
+                            <td>Stake trollsWTFR to Earn trollsWTFR</td>
                             <td className="amount" data-test-id="rewards-summary-ads">
-                              <span className="amount">0.01</span>&nbsp;<span className="currency">Per N2DR</span>
+                              <span className="amount">0.01</span>&nbsp;<span className="currency">Per trollsWTFR</span>
                             </td>
                           </tr>
                           <tr>
-                            <td>Stake N2DR to Earn N2DR+</td>
+                            <td>Stake trollsWTFR to Earn trollsWTFR+</td>
                             <td className="amount" data-test-id="rewards-summary-ac">
-                              <span className="amount">0.005</span>&nbsp;<span className="currency">Per N2DR</span>
+                              <span className="amount">0.005</span>&nbsp;<span className="currency">Per trollsWTFR</span>
                             </td>
                           </tr>
                         </tbody>
@@ -451,7 +451,7 @@ render() {
         <img src="polygon.png" width={'60%'}></img>
       </div>
       <div className='col'>
-        <h1 className='n2dtitlestyle mt-3'>Your NFT Portal</h1>
+        <h1 className='trollsWTFtitlestyle mt-3'>Your NFT Portal</h1>
       <Button onClick={refreshPage} style={{ backgroundColor: "#000000", boxShadow: "1px 1px 5px #000000" }}>Refresh NFT Portal</Button>
       </div>
       <div className='col mt-3 mr-5'>
