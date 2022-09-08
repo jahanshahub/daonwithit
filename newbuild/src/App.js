@@ -207,11 +207,11 @@ export default function App() {
                     <h6 style={{ color: "#FFFFFF" }}>Verify Staked Amount</h6>
                     <Button onClick={verify} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Verify</Button>
                     <div className='table mt-3 mb-5 table-dark'>
-                      <div style={{ fontSize: "19px" }}>Your Staked NFTs:
+                      <div style={{ fontSize: "19px" }}>Total Staked NFTs:
                         <span style={{ backgroundColor: "#ffffff00", fontSize: "21px", color: "#39FF14", fontWeight: "500", textShadow: "1px 1px 2px #000000" }} id='yournfts'>{stakedTokens?.map(i=> `${i} `)}</span>
                       </div>
                       <Link to="/nft" className='btn btn-primary' style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Stake</Link>
-                      <div style={{ fontSize: "19px" }}>Total Staked NFTs:
+                      <div style={{ fontSize: "19px" }}>Your Staked NFTs:
                         <span style={{ backgroundColor: "#ffffff00", fontSize: "21px", color: "#39FF14", fontWeight: "500", textShadow: "1px 1px 2px #000000" }} id='stakednfts'>{staker?staker['amountStaked']:''}</span>
                       </div>
                       <div style={{ fontSize: "19px" }}>Unstake All Staked NFTs
