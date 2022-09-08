@@ -1,9 +1,10 @@
 .App {
   text-align: center;
+  /* background-color:  */
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -89,8 +90,8 @@
   font-weight: 300;
 }
 
-.nftminter {
-    background: radial-gradient(circle at 50% 50%, #090f11, #0c1519, #101e2b, #0f223c, #0e2144);
+/* .nftminter {
+    background: radial-gradient(circle at 50% 50%, #090f11, #0c1519, #101e2b, #0f223c, #000000);
     font-family: "SF Pro Display";
     font-weight: 300;
     color: white;
@@ -101,13 +102,14 @@
     -webkit-border: 20px !important;
     -moz-border: 20px !important;
     border: 20px !important;
-}
+} */
 
 .nftstaker {
-  background: radial-gradient(circle at 50% 50%, #090f11, #0c1519, #101e2b, #0f223c, #0e2144);
+  background: radial-gradient(circle at 50% 50%, #090f11, #0c1519, #101e2b, #0f223c, #000000);
   font-family: "SF Pro Display";
   font-weight: 300;
   color: white;
+  display:flexbox;
   box-shadow: 0 0 1px 1px #17b2ff;
   -webkit-border-radius: 20px !important;
   -moz-border-radius: 20px !important;
@@ -119,17 +121,18 @@
 
 .stakingrewards {
     font-family: "SF Pro Display";
+    display: flexbox;
     font-weight: 300;
     box-shadow: 1px 1px 15px #ffffff;
-    background: radial-gradient(circle at 50% 50%, #000000, #050604, #0a0c08, #0f130b, #14190f, #191f13, #1e2517, #232b1b, #28321e, #2d3822, #323e26);
+    background: linear-gradient(circle at 50% 50%, #000000, #050604, #0a0c08, #0f130b, #14190f, #191f13, #1e2517, #232b1b, #28321e, #2d3822, #323e26);
 }
 
 .modal-style1 {
-  background: radial-gradient(circle at 50% 50%, #090f11, #0c1519, #101e2b, #0f223c, #0e2144);
+  background: radial-gradient(circle at 50% 50%, #090f11, #0c1519, #101e2b, #0f223c, #000000);
   font-family: "SF Pro Display";
   font-weight: 300;
   color: white;
-  box-shadow: 0 0 1px 1px #17b2ff;
+  box-shadow: 0 0 1px 1px #19b2ff;
   -webkit-border-radius: 20px !important;
   -moz-border-radius: 20px !important;
   border-radius: 20px !important;
@@ -139,12 +142,7 @@
 }
 
 .container-style {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  justify-items: stretch;
-  align-items: stretch
+display: flex-inline;
 }
 
 @keyframes glow2 {

@@ -205,8 +205,6 @@ export default function App() {
         </div>
       </nav>
       <div className='container container-style'>
-
-        <div className='col'>
           <div className='nftstaker border-0'>
             <div  style={{ fontFamily: "SF Pro Display" }} >
               <h2 style={{ borderRadius: '14px', fontWeight: "300", fontSize: "25px" }}>trollsWTFR NFT Staking Vault </h2>
@@ -232,11 +230,11 @@ export default function App() {
                     </div>
                   </form>
                 </div>
-                <img className="col-lg-4" src="art.png" />
+                {/* <img className="col-lg-4" src="art.png" /> */}
                 <div className="col">
                   <form className='stakingrewards' style={{ borderRadius: "25px", boxShadow: "1px 1px 15px #ffffff", fontFamily: "SF Pro Display" }}>
                     <h5 style={{ color: "#FFFFFF", fontWeight: '300' }}> Staking Rewards</h5>
-                    <Button style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Earned N2D Rewards</Button>
+                    <Button style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Earned Trolls.wtf Rewards</Button>
                     <div id='earned' style={{ color: "#39FF14", marginTop: "5px", fontSize: '25px', fontWeight: '500', textShadow: "1px 1px 2px #000000" }}><p style={{ fontSize: "20px" }}>{stakeInfo ? stakeInfo._availableRewards : 'Earned Tokens'}</p></div>
                     <div className='col-12 mt-2'>
                       <Button onClick={claimit} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} className="mb-2">Claim</Button>
@@ -245,7 +243,7 @@ export default function App() {
                   </form>
                 </div>
               </div>
-              <div className="row px-4 pt-2">
+              {/* <div className="row px-4 pt-2">
                 <div className="header">
                   <div style={{ fontSize: '25px', borderRadius: '14px', color: "#ffffff", fontWeight: "300" }}>trollsWTFR NFT Staking Pool Active Rewards</div>
                   <table className='table px-3 table-bordered table-dark'>
@@ -258,29 +256,29 @@ export default function App() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>N2D Bronze Collection</td>
+                        <td>Trolls.wtf Bronze Collection</td>
                         <td className="amount" data-test-id="rewards-summary-ads">
-                          <span className="amount">0.50</span>&nbsp;<span className="currency">N2DR</span>
+                          <span className="amount">0.50</span>&nbsp;<span className="currency">Trolls.wtfR</span>
                         </td>
                         <td className="exchange">
                           <span className="amount">2</span>&nbsp;<span className="currency">NFTs/M</span>
                         </td>
                       </tr>
                       <tr>
-                        <td>N2D Silver Collection</td>
+                        <td>Trolls.wtf Silver Collection</td>
                         <td className="amount" data-test-id="rewards-summary-ac">
-                          <span className="amount">2.50</span>&nbsp;<span className="currency">N2DR</span>
+                          <span className="amount">2.50</span>&nbsp;<span className="currency">Trolls.wtfR</span>
                         </td>
                         <td className="exchange"><span className="amount">10</span>&nbsp;<span className="currency">NFTs/M</span>
                         </td>
                       </tr>
                       <tr className='stakegoldeffect'>
-                        <td>N2D Gold Collection</td>
-                        <td className="amount" data-test-id="rewards-summary-one-time"><span className="amount">1</span>&nbsp;<span className="currency">N2DR+</span>
+                        <td>Trolls.wtf Gold Collection</td>
+                        <td className="amount" data-test-id="rewards-summary-one-time"><span className="amount">1</span>&nbsp;<span className="currency">Trolls.wtfR+</span>
                         </td>
                         <td className="exchange">
                           <span className="amount">25 NFTs/M or </span>
-                          <span className="currency">100 N2DR/M</span>
+                          <span className="currency">100 Trolls.wtfR/M</span>
                         </td>
                       </tr>
                     </tbody>
@@ -314,17 +312,17 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
-        </div>
+        
       </div>
       <div className='row nftportal mt-3'>
         <div className='col mt-4 ml-3'>
           <img src="polygon.png" width={'60%'}></img>
         </div>
         <div className='col'>
-          <h1 className='n2dtitlestyle mt-3'>Your NFT Portal</h1>
+          <h1 className='Trolls.wtftitlestyle mt-3'>Your NFT Portal</h1>
           <Button onClick={refreshPage} style={{ backgroundColor: "#000000", boxShadow: "1px 1px 5px #000000" }}>Refresh NFT Portal</Button>
         </div>
         <div className='col mt-3 mr-5'>
