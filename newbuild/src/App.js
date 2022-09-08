@@ -247,7 +247,7 @@ export default function App() {
               </div>
               <div className="row px-4 pt-2">
                 <div className="header">
-                  <div style={{ fontSize: '25px', borderRadius: '14px', color: "#ffffff", fontWeight: "300" }}>N2DR NFT Staking Pool Active Rewards</div>
+                  <div style={{ fontSize: '25px', borderRadius: '14px', color: "#ffffff", fontWeight: "300" }}>trollsWTFR NFT Staking Pool Active Rewards</div>
                   <table className='table px-3 table-bordered table-dark'>
                     <thead className='thead-light'>
                       <tr>
@@ -287,30 +287,6 @@ export default function App() {
                   </table>
 
                   <div className="header">
-                    <div style={{ fontSize: '25px', borderRadius: '14px', color: "#ffffff", fontWeight: "300" }}>trollsWTFR NFT Staking Pool Active Rewards</div>
-                    <table className='table px-3 table-bordered table-dark'>
-                      <thead className='thead-light'>
-                        <tr>
-                          <th scope="col">Farm Pools</th>
-                          <th scope="col">Harvest Daily Earnings</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Stake N2DR to Earn N2DR</td>
-                          <td className="amount" data-test-id="rewards-summary-ads">
-                            <span className="amount">0.01</span>&nbsp;<span className="currency">Per N2DR</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Stake N2DR to Earn N2DR+</td>
-                          <td className="amount" data-test-id="rewards-summary-ac">
-                            <span className="amount">0.005</span>&nbsp;<span className="currency">Per N2DR</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
                     <div className="header">
                       <div style={{ fontSize: '25px', borderRadius: '14px', fontWeight: '300' }}>trollsWTFR Token Stake Farms</div>
                       <table className='table table-bordered table-dark' style={{ borderRadius: '14px' }} >
