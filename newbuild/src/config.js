@@ -1,7 +1,7 @@
 import { createAlchemyWeb3 } from '@alch/alchemy-web3';
 
-export const NFTCONTRACT = "0x597e400611DC566A16552FE7bB353500733cDe5c";
-export const STAKINGCONTRACT = "0x2c2c58eF8ee835D92986Dc46c626d479BB4e8239";
+export const NFTCONTRACT = "0xeD221eF1C8f4b35922e4D1e115A9a1644F8DFa10";
+export const STAKINGCONTRACT = "0x40ebf5c618146cefb26b1052af19c9f76590C128";
 export const etherscanapi = "https://api-goerli.etherscan.io/";
 export const moralisapi = "https://deep-index.moralis.io/api/v2";
 export const nftpng = "https://ipfs.io/ipfs/QmNVNxwDue3Bb9dbaesEj5zGJESir2GYJ4Jm2vkJbZaHPZ/";
