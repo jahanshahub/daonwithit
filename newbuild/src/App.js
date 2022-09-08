@@ -188,14 +188,20 @@ export default function App() {
           )}
         </div>
       </nav>
+      
       <div className='container container-style'>
           <div className='nftstaker border-0'>
+          <img src="art.png" className="trollwtflogo"  />
+
             <div  style={{ fontFamily: "SF Pro Display" }} >
               <h2 style={{ borderRadius: '14px', fontWeight: "300", fontSize: "25px" }}>trollsWTFR NFT Staking Vault </h2>
               <h6 style={{ fontWeight: "300" }}>First time staking?</h6>
+              
               <Button className="btn" onClick={enable} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Authorize Your Wallet</Button>
-              <div className="row px-3">
+                <div className="row px-3">
+
                 <div className="col">
+
                   <form className="stakingrewards" style={{ borderRadius: "25px", boxShadow: "1px 1px 15px #ffffff" }}>
                     <h5 style={{ color: "#FFFFFF", fontWeight: '300' }}>Your Vault Activity</h5>
                     <h6 style={{ color: "#FFFFFF" }}>Verify Staked Amount</h6>
@@ -214,7 +220,6 @@ export default function App() {
                     </div>
                   </form>
                 </div>
-                {/* <img className="col-lg-4" src="art.png" /> */}
                 <div className="col">
                   <form className='stakingrewards' style={{ borderRadius: "25px", boxShadow: "1px 1px 15px #ffffff", fontFamily: "SF Pro Display" }}>
                     <h5 style={{ color: "#FFFFFF", fontWeight: '300' }}> Staking Rewards</h5>
