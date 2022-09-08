@@ -42,10 +42,33 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_staker",
+        "type": "address"
+      }
+    ],
+    "name": "getStakedTokens",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "tokenIds",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "nftCollection",
     "outputs": [
-      { "internalType": "contract IERC721", "name": "", "type": "address" }
+      {
+        "internalType": "contract IERC721",
+        "name": "",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -53,7 +76,13 @@
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -68,14 +97,22 @@
     "inputs": [],
     "name": "rewardsToken",
     "outputs": [
-      { "internalType": "contract IERC20", "name": "", "type": "address" }
+      {
+        "internalType": "contract IERC20",
+        "name": "",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_newValue", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_newValue",
+        "type": "uint256"
+      }
     ],
     "name": "setRewardsPerHour",
     "outputs": [],
@@ -84,7 +121,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256[]", "name": "_tokenIds", "type": "uint256[]" }
+      {
+        "internalType": "uint256[]",
+        "name": "_tokenIds",
+        "type": "uint256[]"
+      }
     ],
     "name": "stake",
     "outputs": [],
@@ -92,17 +133,63 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "stakerAddress",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "stakedIDs",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "stakerAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "stakers",
     "outputs": [
-      { "internalType": "uint256", "name": "amountStaked", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "amountStaked",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "timeOfLastUpdate",
@@ -118,15 +205,31 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "stakersArray",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "newOwner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
     ],
     "name": "transferOwnership",
     "outputs": [],
@@ -135,11 +238,19 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_user", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      }
     ],
     "name": "userStakeInfo",
     "outputs": [
-      { "internalType": "uint256", "name": "_tokensStaked", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_tokensStaked",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "_availableRewards",
@@ -151,9 +262,13 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256[]", "name": "_tokenIds", "type": "uint256[]" }
+      {
+        "internalType": "uint256[]",
+        "name": "_tokenIds",
+        "type": "uint256[]"
+      }
     ],
-    "name": "withdraw",
+    "name": "withdrawArray",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
