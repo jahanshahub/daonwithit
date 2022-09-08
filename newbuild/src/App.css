@@ -56,7 +56,7 @@
 
 .nftapp {
   background: radial-gradient(circle at 50% 50%, #5e99ac, #508aa3, #35678f, #1f457a, #173771);
-}
+  min-height: 100vh;}
 
 @-webkit-keyframes AnimationName {
   0%{background-position:0% 50%}
@@ -76,7 +76,7 @@
 
 .connectbutton, .disconnectbutton {
   background: #00000010;
-  box-shadow: 0px 1px 10px #17b2ff;
+  box-shadow: 0px 1px 10px #2aff17;
   color: #ffffff;
   border-radius: 14px;
   min-width: max-content;
