@@ -149,9 +149,13 @@ export default function App() {
     setStakedTokens([]);
   };
 
-  async function getStakeInfo() {
-    console.log(contract)
-
+  async function verify() {
+    const stakeInfo = await contract.userStakeInfo();
+    const staker = await contract.stakers();
+    const stakedTokens = await contract.getStakedTokens();
+    setStakeInfo(stakeInfo)
+    setStaker(staker)
+    setStakedTokens(stakedTokens)
   }
 
   async function rewardinfo() {
@@ -204,8 +208,8 @@ export default function App() {
 
         <div className='col'>
           <div className='nftstaker border-0'>
-            <div style={{ fontFamily: "SF Pro Display" }} >
-              <h2 style={{ borderRadius: '14px', fontWeight: "300", fontSize: "25px" }}>N2DR NFT Staking Vault </h2>
+            <div  style={{ fontFamily: "SF Pro Display" }} >
+              <h2 style={{ borderRadius: '14px', fontWeight: "300", fontSize: "25px" }}>trollsWTFR NFT Staking Vault </h2>
               <h6 style={{ fontWeight: "300" }}>First time staking?</h6>
               <Button className="btn" onClick={enable} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Authorize Your Wallet</Button>
               <div className="row px-3">
@@ -213,11 +217,12 @@ export default function App() {
                   <form className="stakingrewards" style={{ borderRadius: "25px", boxShadow: "1px 1px 15px #ffffff" }}>
                     <h5 style={{ color: "#FFFFFF", fontWeight: '300' }}>Your Vault Activity</h5>
                     <h6 style={{ color: "#FFFFFF" }}>Verify Staked Amount</h6>
-                    <Link to="/nft" style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Stake</Link>
+                    <Button onClick={verify} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Verify</Button>
                     <div className='table mt-3 mb-5 table-dark'>
                       <div style={{ fontSize: "19px" }}>Your Staked NFTs:
                         <span style={{ backgroundColor: "#ffffff00", fontSize: "21px", color: "#39FF14", fontWeight: "500", textShadow: "1px 1px 2px #000000" }} id='yournfts'>{stakedTokens?.map(i=> `${i} `)}</span>
                       </div>
+                      <Link to="/nft" className='btn btn-primary' style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Stake</Link>
                       <div style={{ fontSize: "19px" }}>Total Staked NFTs:
                         <span style={{ backgroundColor: "#ffffff00", fontSize: "21px", color: "#39FF14", fontWeight: "500", textShadow: "1px 1px 2px #000000" }} id='stakednfts'>{staker?staker['amountStaked']:''}</span>
                       </div>
@@ -282,8 +287,8 @@ export default function App() {
                   </table>
 
                   <div className="header">
-                    <div style={{ fontSize: '25px', borderRadius: '14px', fontWeight: '300' }}>N2DR Token Stake Farms</div>
-                    <table className='table table-bordered table-dark' style={{ borderRadius: '14px' }} >
+                    <div style={{ fontSize: '25px', borderRadius: '14px', color: "#ffffff", fontWeight: "300" }}>trollsWTFR NFT Staking Pool Active Rewards</div>
+                    <table className='table px-3 table-bordered table-dark'>
                       <thead className='thead-light'>
                         <tr>
                           <th scope="col">Farm Pools</th>
@@ -305,6 +310,32 @@ export default function App() {
                         </tr>
                       </tbody>
                     </table>
+
+                    <div className="header">
+                      <div style={{ fontSize: '25px', borderRadius: '14px', fontWeight: '300' }}>trollsWTFR Token Stake Farms</div>
+                      <table className='table table-bordered table-dark' style={{ borderRadius: '14px' }} >
+                        <thead className='thead-light'>
+                          <tr>
+                            <th scope="col">Farm Pools</th>
+                            <th scope="col">Harvest Daily Earnings</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Stake trollsWTFR to Earn trollsWTFR</td>
+                            <td className="amount" data-test-id="rewards-summary-ads">
+                              <span className="amount">0.01</span>&nbsp;<span className="currency">Per trollsWTFR</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Stake trollsWTFR to Earn trollsWTFR+</td>
+                            <td className="amount" data-test-id="rewards-summary-ac">
+                              <span className="amount">0.005</span>&nbsp;<span className="currency">Per trollsWTFR</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
