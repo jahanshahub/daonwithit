@@ -52,12 +52,29 @@ export default function NFT() {
     cacheProvider: true,
     providerOptions: getProviderOptions()
   });
-
+  const subscribeProvider = async (provider) => {
+    if (!provider.on) {
+      return;
+    }
+    provider.on("close", () => disconnect());
+    provider.on("accountsChanged", async (accounts) => {
+      // console.log(accounts[0])
+      setAccount(accounts[0])
+    });
+    provider.on("chainChanged", async (chainId) => {
+      // const networkId = await web3.eth.net.getId();
+      // setNetwork(networkId)
+    });
+    provider.on("networkChanged", async (networkId) => {
+      // const chainId = await web3.eth.chainId();
+      // setChainId(chainId);
+    });
+  };
   const connectWallet = async () => {
     try {
       var provider = await web3Modal.connect();
       const web3 = new Web3(provider);
-      await provider.send('eth_requestAccounts');
+       await subscribeProvider(provider);
       const accounts = await web3.eth.getAccounts();
       const account = accounts[0];
       setAccount(account);
