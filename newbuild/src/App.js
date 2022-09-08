@@ -1,35 +1,22 @@
 import './App.css';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import 'sf-font';
-// import axios from 'axios';
-import ABI from './ABI.json';
-import VAULTABI from './VAULTABI.json';
-import TOKENABI from './TOKENABI.json';
-import { NFTCONTRACT, STAKINGCONTRACT, etherscanapi, moralisapi } from './config';
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import WalletLink from "walletlink";
 import Web3 from 'web3';
-import { createAlchemyWeb3 } from '@alch/alchemy-web3';
 import { truncateAddress } from './utils';
 import contractInstance from './contractInstance';
 
-const Web3Alc = createAlchemyWeb3("https://eth-goerli.g.alchemy.com/v2/vY76_mMjGO0EPfRIs2q_S4zsVOn1w-vF");
-
-const moralisapikey = "LrwlfLHul6lNJqnxa0kmOo7S2E7tStIIfAQqKP8ygLkZ2k45Xq1Pa8GYTTLxM05m";
-const etherscanapikey = "M8PI35YSNUTAGWASP1EJB165BS6FSJ5GIU";
-
 export default function App() {
-  const [provider, setProvider] = useState();
   const [web3, setWeb3] = useState();
   const [account, setAccount] = useState();
-  const [error, setError] = useState("");
   const [contract, setContract] = useState();
-  const [chainId, setChainId] = useState();
-  const [network, setNetwork] = useState();
+  // const [chainId, setChainId] = useState();
+  // const [network, setNetwork] = useState();
   const [stakeInfo, setStakeInfo] = useState();
   const [staker, setStaker] = useState();
   const [stakedTokens, setStakedTokens] = useState([]);
@@ -73,16 +60,16 @@ export default function App() {
     }
     provider.on("close", () => disconnect());
     provider.on("accountsChanged", async (accounts) => {
-      console.log(accounts[0])
+      // console.log(accounts[0])
       setAccount(accounts[0])
     });
     provider.on("chainChanged", async (chainId) => {
-      const networkId = await web3.eth.net.getId();
-      setNetwork(networkId)
+      // const networkId = await web3.eth.net.getId();
+      // setNetwork(networkId)
     });
     provider.on("networkChanged", async (networkId) => {
-      const chainId = await web3.eth.chainId();
-      setChainId(chainId);
+      // const chainId = await web3.eth.chainId();
+      // setChainId(chainId);
     });
   };
 
@@ -104,18 +91,17 @@ export default function App() {
 
   const connectWallet = async () => {
     try {
-      console.log('connectWallet')
       const provider = await web3Modal.connect();
       await subscribeProvider(provider);
       await provider.enable();
       const web3 = initWeb3(provider);
       setWeb3(web3);
 
-      const curChainId = await provider.request({ method: 'eth_chainId' });
+      // const curChainId = await provider.request({ method: 'eth_chainId' });
 
       const accounts = await web3.eth.getAccounts();
-      const chainId = await web3.eth.getChainId();
-      const network = await web3.eth.net.getId();
+      // const chainId = await web3.eth.getChainId();
+      // const network = await web3.eth.net.getId();
       if (accounts) setAccount(accounts[0]);
 
       const contract = await contractInstance;
@@ -126,9 +112,9 @@ export default function App() {
       setStakeInfo(stakeInfo)
       setStaker(staker)
       setStakedTokens(stakedTokens)
-      console.log(stakeInfo, staker, stakedTokens)
+      // console.log(stakeInfo, staker, stakedTokens)
     } catch (error) {
-      setError(error);
+      console.log(error)
     }
   };
 
@@ -142,8 +128,8 @@ export default function App() {
 
   const refreshState = () => {
     setAccount();
-    setChainId();
-    setNetwork("");
+    // setChainId();
+    // setNetwork("");
     setStakeInfo();
     setStaker();
     setStakedTokens([]);
@@ -159,8 +145,8 @@ export default function App() {
   }
 
   async function rewardinfo() {
-    var rawnfts = await contract.userStakeInfo(account);
-    document.getElementById('earned').textContent = rawnfts._tokensStaked;
+    const stakeInfo = await contract.userStakeInfo();
+    setStakeInfo(stakeInfo)
   }
 
   async function claimit() {
@@ -181,9 +167,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    console.log('useEffect')
     if (web3Modal.cachedProvider) {
-      console.log('web3Modal.cachedProvider', web3Modal.cachedProvider)
       connectWallet();
     }
   }, []);
@@ -239,7 +223,7 @@ export default function App() {
                 <div className="col">
                   <form className='stakingrewards' style={{ borderRadius: "25px", boxShadow: "1px 1px 15px #ffffff", fontFamily: "SF Pro Display" }}>
                     <h5 style={{ color: "#FFFFFF", fontWeight: '300' }}> Staking Rewards</h5>
-                    <Button style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Earned Trolls.wtf Rewards</Button>
+                    <Button onClick={rewardinfo} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} >Earned Trolls.wtf Rewards</Button>
                     <div id='earned' style={{ color: "#39FF14", marginTop: "5px", fontSize: '25px', fontWeight: '500', textShadow: "1px 1px 2px #000000" }}><p style={{ fontSize: "20px" }}>{stakeInfo ? stakeInfo._availableRewards : 'Earned Tokens'}</p></div>
                     <div className='col-12 mt-2'>
                       <Button onClick={claimit} style={{ backgroundColor: "#ffffff10", boxShadow: "1px 1px 5px #000000" }} className="mb-2">Claim</Button>
@@ -320,18 +304,18 @@ export default function App() {
               </div> */}
             </div>
           </div>
-        
+
       </div>
       <div className='row nftportal mt-3'>
         <div className='col mt-4 ml-3'>
-          <img src="polygon.png" width={'60%'}></img>
+          <img src="polygon.png" width={'60%'} alt='polygon logo'></img>
         </div>
         <div className='col'>
           <h1 className='Trolls.wtftitlestyle mt-3'>Your NFT Portal</h1>
           <Button onClick={refreshPage} style={{ backgroundColor: "#000000", boxShadow: "1px 1px 5px #000000" }}>Refresh NFT Portal</Button>
         </div>
         <div className='col mt-3 mr-5'>
-          <img src="ethereum.png" width={'60%'}></img>
+          <img src="ethereum.png" width={'60%'} alt='ethereum logo'></img>
         </div>
       </div>
     </div>

@@ -5,10 +5,7 @@ import React from 'react';
 import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import 'sf-font';
-import axios from 'axios';
-import VAULTABI from './VAULTABI.json';
-import ABI from './ABI.json';
-import { NFTCONTRACT, STAKINGCONTRACT, moralisapi, nftpng } from './config';
+import { nftpng } from './config';
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import WalletLink from "walletlink";
@@ -16,56 +13,66 @@ import Web3 from 'web3';
 import { truncateAddress } from './utils';
 import contractInstance from './contractInstance';
 
-const moralisapikey = "LrwlfLHul6lNJqnxa0kmOo7S2E7tStIIfAQqKP8ygLkZ2k45Xq1Pa8GYTTLxM05m";
-const providerOptions = {
-  binancechainwallet: {
-    package: true
-  },
-  walletconnect: {
-    package: WalletConnectProvider,
-    options: {
-      infuraId: "d94953e32ec24c75ab3aa0c12b58f156"
-    }
-  },
-  walletlink: {
-    package: WalletLink,
-    options: {
-      appName: "Morali",
-      infuraId: "d94953e32ec24c75ab3aa0c12b58f156",
-      rpc: "",
-      chainId: 5,
-      appLogoUrl: null,
-      darkMode: true
-    }
-  }
-};
-
-const web3Modal = new Web3Modal({ network: "goerli", theme: "dark", cacheProvider: true, providerOptions });
-
 export default function NFT() {
-  const [provider, setProvider] = useState();
   const [stakableNFTs, getNfts] = useState([])
   const [nftstk, getStk] = useState([])
   const [loadingState, setLoadingState] = useState('not-loaded')
-  const [web3, setWeb3] = useState()
   const [account, setAccount] = useState()
-  const [vaultcontract, setVaultcontract] = useState()
   const [contract, setContract] = useState()
-  const [error, setError] = useState("");
+
+  const getProviderOptions = () => {
+    const providerOptions = {
+      binancechainwallet: {
+        package: true
+        },
+      walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+          infuraId: "d94953e32ec24c75ab3aa0c12b58f156"
+        }
+      },
+      walletlink: {
+        package: WalletLink,
+        options: {
+          appName: "Morali",
+          infuraId: "d94953e32ec24c75ab3aa0c12b58f156",
+          rpc: "",
+          chainId: 5,
+          appLogoUrl: null,
+          darkMode: true
+        }
+      },
+    }
+    return providerOptions;
+  };
+
+  const web3Modal = new Web3Modal({
+    network: "goerli",
+    theme: "dark",
+    cacheProvider: true,
+    providerOptions: getProviderOptions()
+  });
 
   const connectWallet = async () => {
     try {
-      const provider = await web3Modal.connect();
+      var provider = await web3Modal.connect();
       const web3 = new Web3(provider);
-      setWeb3(web3);
+      await provider.send('eth_requestAccounts');
       const accounts = await web3.eth.getAccounts();
-      const chainId = await web3.eth.getChainId();
-      const network = await web3.eth.net.getId();
-      setProvider(provider);
+      const account = accounts[0];
+      setAccount(account);
+      const contract = await contractInstance;
+      setContract(contract);
+
+      const stakableNFTs = await contract.walletOfOwner();
+      const stakednfts = await contract.getStakedTokens();
+      getNfts(stakableNFTs);
+      getStk(stakednfts);
+      setLoadingState('loaded');
     } catch (error) {
-      setError(error);
+      console.log(error);
     }
-  };
+  }
 
   const disconnect = async () => {
     await web3Modal.clearCachedProvider();
@@ -77,25 +84,11 @@ export default function NFT() {
   };
 
   useEffect(() => {
-    callApi()
+    if (web3Modal.cachedProvider) {
+      connectWallet();
+    }
   }, [])
 
-  async function callApi() {
-    var provider = await web3Modal.connect();
-    const web3 = new Web3(provider);
-    await provider.send('eth_requestAccounts');
-    const accounts = await web3.eth.getAccounts();
-    const account = accounts[0];
-    setAccount(account);
-    const contract = await contractInstance;
-    setContract(contract);
-
-    const stakableNFTs = await contract.walletOfOwner();
-    const stakednfts = await contract.getStakedTokens();
-    getNfts(stakableNFTs);
-    getStk(stakednfts);
-    setLoadingState('loaded');
-  }
   if (loadingState === 'loaded' && !stakableNFTs.length)
     return (
       <h1 className="text-3xl">Wallet Not Connected</h1>
